@@ -1,0 +1,75 @@
+
+// COLORS*****************************
+
+// Font S
+$font-google             : 'https://fonts.googleapis.com/css?family=Quicksand:300,400';
+$font-family             :'Quicksand', sans-serif;
+$font-size               :20px;
+$font-color              :#7F7E7E;
+
+// Descriptive color variables
+
+$green-highlight : #00FFBF;
+$blue-highlight  : #81DAF5;
+
+// Button
+
+$green  :#04B45F;
+$red    :#FA5858;
+$orange :#FF8000;
+$purple :#8181F7;
+
+
+// Grid
+
+$fade-green   : ligthen($green-highlight, 35%);
+$dark-blue    : darken($blue-highlight, 55%);
+$fade-blue    : ligthen($blue-highlight, 35%);
+$fade-purple  : ligthen($purple, 35%);
+$fade-green   : ligthen($green, 35%);
+$fade-red     : ligthen($red, 35%);
+$fade-orange  : ligthen($orange, 35%);
+
+
+//base
+
+body{
+    font-family: $font-family;
+    color:$font-color ;
+
+}
+
+
+// nav
+.grid__row {
+ padding-top: 30px;
+ }
+.grid__col--3 {
+  text-align: center;
+ }
+ .nav a {
+   color: $font-color;
+   text-decoration: none;
+   font-size: 18px;
+   text-align: center;
+   padding: 5px ;
+   border-radius:5px;
+   display:block;
+}
+.nav li{
+   list-style-type: none;
+   padding: 10px;
+     font-family: $font-family;
+       font-style: extra-Light;
+}
+
+.nav a:hover{
+   background: $blue-highlight;
+   border:solid 1px $blue-highlight;
+   color: white;}
+
+
+.container{
+   width: 80%;
+   margin: 0 auto;
+}
