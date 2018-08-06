@@ -32,6 +32,7 @@ $fade-dark-green:ligthen($green, 10%);
 
 //Media query
 $break-l: 1400px;
+$break-sm: 440px;
 
 //Base-----------------------------
 
@@ -150,7 +151,6 @@ p {
 // buton--------------------------------------
 
 .theme {
-
   &__colors {
       padding: 10px;
       margin:5px;
@@ -158,93 +158,107 @@ p {
       width: 100%;
       margin-top: 15px;
   }
-
    &__colors:focus {
      outline: none;
   }
 }
 
+//mising grid
+@mixin color-grd ($grids) {
+@each $grid, $color in $grids {
+    .grid__col--#{$grid}.theme__colors {
+      background-color:$color;
+    }
+  }
+};
+
+
+
+///variabaless butoon
+$buttons: (
+    default: $blue-highlight,
+    success: $green,
+    error  : $red,
+    warning: $orange,
+    info   : $purple,
+);
+
+/// mixinh button????????
 .btn {
-  &--default:focus {
-     outline: none;
-  }
-
-  &--default{
-     background-color: $blue-highlight;
-     @extend %btn-style;
-    }
-  &--success{
-     background-color: $green;
-     @extend %btn-style;
-
-  }
-  &--error{
-     background-color: $red;
-      @extend %btn-style;
-    }
-  &--warning {
-     background-color: $orange;
-     @extend %btn-style;
-    }
-
-  &--info {
-     background-color: $purple;
-      @extend %btn-style;
-    }
+@each $button, $color in $buttons {
+   &--#{$button} {
+        background-color:$color;
+         @extend %btn-style;
+   }
+ }
 }
-// Grid----------------------------------
+
+//mxin
+@mixin flexy($disp:flex,
+     $dir:null,
+     $just:null,
+     $align:null){
+ display: $disp ;
+ flex-direction:$dir ;
+ justify-content: $just;
+ align-items:  $align   ;
+
+}
 .grid__row {
-  display: flex;
-  flex-direction:column;
-  justify-content:center;
-   align-items: center;
-  padding-top: 30px;
-  color:$font-color;
+  @include flexy($disp:flex,
+      $dir:column,
+      $just:center,
+      $align:center);
+      padding-top: 30px;
+      color:$font-color;
  }
 
+//gri variable
+$grids: (
+   12: lighten($green-highlight, 10%) ,
+    6: darken($blue-highlight, 30%),
+    4: lighten($blue-highlight, 5%),
+    3: lighten($purple, 10%),
+    5: lighten($green, 10%),
+    7: lighten($red, 10%),
+    8: lighten($orange, 10%),
+    );
 
+
+//grid mixing
+@each $grid, $color in $grids {
+  .grid__col--#{$grid}.theme__colors {
+    background-color:$color;
+  }
+}
  .grid__col--3,
  .grid__col--9 {
    text-align: center;
  }
 
-.grid__col--2 {
-   background-color: $dark-blue;
-}
-.grid__col--3.theme__colors{
-    background-color: $fade-purple;
-    text-align: left;
-}
-.grid__col--4.theme__colors{
-  background-color: $fade-blue;
-}
-.grid__col--5.theme__colors{
-  background-color: $fade-green;
-}
-.grid__col--6.theme__colors{
-  background-color: $dark-blue;
-}
-.grid__col--7.theme__colors{
-  background-color: $fade-red;
-}
-.grid__col--8.theme__colors{
-  background-color: $fade-orange;
-}
-.grid__col--9.theme__colors{
-  background-color: $fade-blue;
-}
-
-.grid__col--12.theme__colors{
-   background-color: $fade-green;
-
-}
-
-.centered.grid__col--7.theme__colors{
-   background-color: $fade-red;
-}
 
 
 //media------------------------------------
+
+// @mixin mq($break){
+//   @if $break == 'sm'{
+//     @media (min-width: $break-s){
+//       @content
+//
+//     }
+//
+//     @else if $break == 'ms'{
+//      @media (min-width: $break-m){
+//       @content
+//       }
+//   }
+//     @else if $break == 'lg'{
+//      @media (min-width: $break-l){
+//       @content
+//       }
+//     }
+// }
+
 
 
 @media (min-width: $break-l) {
@@ -257,25 +271,16 @@ p {
      flex-direction: row;
      text-align: center;
 }
-
-
-
  .grid__col--12{
-
       justify-content: space-around;
       width: 100%;
  }
-
 .grid__row{
       justify-content: space-around;
 }
-
  .grid__col--8 {
      flex: 1 80%;
-
-
  }
-
   .grid__col--4 {
     padding-left: 40px;
   }
