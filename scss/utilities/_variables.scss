@@ -13,12 +13,21 @@ $green-highlight : #28DCB8;
 $blue-highlight  : #51DDFC;
 
 // Button
+///variabaless butoon
+
 
 $green  :#63CC82;
 $red    :#E4757A;
 $orange :#FD7856;
 $purple :#927BC1;
 
+$buttons: (
+    default: $blue-highlight,
+    success: $green,
+    error  : $red,
+    warning: $orange,
+    info   : $purple,
+);
 
 //Grid
 
@@ -33,6 +42,7 @@ $fade-dark-green:ligthen($green, 10%);
 //Media query
 $break-l: 1024px;
 $break-sm: 440px;
+$break-medium: 768px;px;
 
 //Base-----------------------------
 
@@ -45,6 +55,9 @@ p {
      display: block;
 }
 
+ul{
+  list-style-type: none;
+}
 
 .container{
    width: 85%;
@@ -83,51 +96,6 @@ p {
   padding-left: 25px;
   margin-bottom: 50px;
 }
-// nav-----------------------------
-
-//
-//
-// .nav {
-// //         display: flex;
-// //         flex-direction: column;
-// // }
-//
-//     a {
-//      color: $font-color;
-//      text-decoration: none;
-//      font-size: 18px;
-//       // text-align: center;
-//      padding: 5px ;
-//      border-radius:5px;
-//      width:100%;
-// }
-//
-//     li{
-//     list-style-type: none;
-//     padding: 10px;
-//     font-family: $font-family;
-//     font-style: extra-light;
-//      width:100%;
-//
-//
-// }
-//
-//    a:hover{
-//      background:$green-highlight ;
-//      border:solid 1px $green-highlight ;
-//      color: white;
-//
-//      width: 100%;
-//
-//      }
-// }
-//
-// .nav__item{
-//  margin: 0;
-//  width: 100%;
-// }
-
-
 
 @mixin flexy($disp:flex,
      $dir:null,
@@ -153,40 +121,44 @@ p {
     width: 100%;
     padding-bottom: 10px;
     color: $font-color;
-
+     &:hover {
+       color: #fff;
+       background:$green-highlight ;
+     }
 
   }
 
-  .nav {
-       list-style-type: none;
+//mixn imag
+@mixin img {
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
+//mixin padding width
+@mixin width {
+  padding: 10px;
+  width: 100%;
 
-.nav__item a:hover {
-  color: #fff;
-  background:$green-highlight ;
 }
 //imag-------------------------------
 
+
 .img{
     &--frame {
-    border: solid 1px grey;
-    padding:10px;
-    width:100%;
-    margin-left: auto;
-    margin-right: auto;
+      @include width;
+      border: solid 1px grey;
+      @include img;
   }
     &--avatar {
-    display:block;
-    margin:20px;
-    margin-left: auto;
-    margin-right: auto;
+      display:block;
+      margin:20px;
+       @include img;
     // padding-left: 30px;
   }
     &--logo {
-    display: block;
-     margin-left: auto;
-     margin-right: auto;
+      display: block;
+       @include img;
 
    }
 }
@@ -202,11 +174,14 @@ p {
      margin:5px;
      border: none;
      border-bottom: 6px solid $green-highlight;
+     &:focus {
+        outline: none;
+     }
   }
 
-  &__input:focus {
-     outline: none;
-  }
+  // &__input:focus {
+  //    outline: none;
+  // }
 
   &__label--hidden {
      display: none;
@@ -215,17 +190,20 @@ p {
 
 // buton--------------------------------------
 
+
 .theme {
   &__colors {
-      padding: 10px;
+      @include width;
       margin:5px;
       border-radius: 5px;
-      width: 100%;
       margin-top: 15px;
+      &:focus {
+         outline: none;
+      }
   }
-   &__colors:focus {
-     outline: none;
-  }
+  //  &__colors:focus {
+  //    outline: none;
+  // }
 }
 
 //mising grid
@@ -236,18 +214,6 @@ p {
     }
   }
 };
-
-
-
-///variabaless butoon
-$buttons: (
-    default: $blue-highlight,
-    success: $green,
-    error  : $red,
-    warning: $orange,
-    info   : $purple,
-);
-
 /// mixinh button????????
 .btn {
 @each $button, $color in $buttons {
@@ -257,8 +223,7 @@ $buttons: (
    }
  }
 }
-
-//mxin
+//mxin flex
 @mixin flexy($disp:flex,
      $dir:null,
      $just:null,
@@ -269,6 +234,11 @@ $buttons: (
  align-items:  $align   ;
 
 }
+
+
+
+
+
  .grid__row {
 //   @include flexy($disp:null,
 //       $dir:null
@@ -327,7 +297,16 @@ $grids: (
 //       }
 //     }
 // }
-
+// @mixin flexy($disp:flex,
+//      $dir:null,
+//      $just:null,
+//      $align:null){
+//  display: $disp ;
+//  flex-direction:$dir ;
+//  justify-content: $just;
+//  align-items:  $align   ;
+//
+// }
 
 
 @media (min-width: $break-l) {
