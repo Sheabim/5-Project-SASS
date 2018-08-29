@@ -1,0 +1,38 @@
+//typography
+.headline {
+  &--primary{
+     padding-left: 30px;
+     padding-bottom: 10px;
+     color: $green-highlight;
+     font-size:30px;
+
+  }
+
+   &--secondary {
+     font-weight: 200;
+     color:$font-color;
+     padding-top: 30px;
+     text-align: left;
+  }
+}
+
+
+.container{
+   width: 85%;
+   margin: 0 auto;
+}
+
+.link{
+    text-decoration: none;
+    color: $blue-highlight;
+    font-weight: bold;
+}
+
+.blockquote {
+  font-style: italic;
+  font-size:20px;
+  border-left: solid 10px $green-highlight;
+  border-radius: 5px;
+  padding-left: 25px;
+  margin-bottom: 50px;
+}

@@ -1,7 +1,17 @@
+/* base ---------------------*/
 
-  * {
+
+
+
+* {
 
     box-sizing: border-box;
+}
+
+//Base-----------------------------
+
+body{
+    font-family: $font-family;
 }
 
 p {
@@ -9,8 +19,6 @@ p {
      display: block;
 }
 
-// 
-// ul{
-//
-//
-// }
+ul{
+  list-style-type: none;
+}

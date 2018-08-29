@@ -1,0 +1,18 @@
+.img{
+    &--frame {
+      @include width;
+      border: solid 1px grey;
+      @include img;
+  }
+    &--avatar {
+      display:block;
+      margin:20px;
+       @include img;
+    // padding-left: 30px;
+  }
+    &--logo {
+      display: block;
+       @include img;
+
+   }
+}
