@@ -3,8 +3,7 @@
     text-align: center;
     width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+     @include flexy($dir: column,$just: space-around );
     text-decoration: none;
     list-style-type: none;
     padding: 5px ;
@@ -12,9 +11,23 @@
     width: 100%;
     padding-bottom: 10px;
     color: $font-color;
+       @include mq(large) {
+        padding: 10px 5px;
+        margin: 20px;
+      }
      &:hover {
        color: #fff;
        background:$green-highlight ;
      }
 
   }
+
+   .nav{
+
+
+   @include mq(large) {
+     // @media (min-width:$brk-lg) {
+     @include flexy($dir: row);
+       text-align: center;
+     }
+}

@@ -2,11 +2,30 @@
  .grid__row {
        padding-top: 30px;
        color:$font-color;
+       @include mq(large){
+       // @media (min-width:$brk-lg) {
+       @include flexy($dir: row, $just:  space-around);
+            text-align: center;
+       }
   }
 
-
-  .grid__col--12,
-
-  {
+.grid__col--12 {
       width: 100%;
+      @include mq(large){
+      @include flexy($dir: row,$just: space-around);
+      text-align: center;
+      }
  }
+
+
+ .grid__col--8 {
+     @include mq(large){
+     flex: 1 80%;
+ }
+}
+
+.grid__col--4 {
+     @include mq(large){
+  padding-left: 40px;
+}
+}

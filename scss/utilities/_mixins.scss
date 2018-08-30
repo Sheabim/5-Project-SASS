@@ -1,9 +1,70 @@
 /* Mixing  ---------------------*/
 
-// ==========================================================================
-// Media Queries
-//
 
-// ==========================================================================
-// Flexbox
-//
+/* Mixing PADDING IMAGE ---------------------*/
+@mixin width {
+  padding: 10px;
+  width: 100%;
+}
+/* Mixing imagin position ---------------------*/
+@mixin widthround {
+  padding: 10px;
+  width: auto;
+}
+
+/* Mixing IMAGE ---------------------*/
+@mixin img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/// mixinh button
+
+//grid mixing
+@each $grid, $color in $grids {
+  .grid__col--#{$grid}.theme__colors {
+    background-color:$color;
+  }
+}
+
+
+//mixing grid
+@mixin color-grd ($grids) {
+@each $grid, $color in $grids {
+    .grid__col--#{$grid}.theme__colors {
+      background-color:$color;
+    }
+  }
+};
+
+
+/* Mixing Flexbox ---------------------*/
+@mixin flexy($disp:flex,
+     $dir:null,
+     $just:null,
+     $align:null){
+ display: $disp ;
+ flex-direction:$dir ;
+ justify-content: $just;
+ align-items:  $align ;
+
+}
+
+
+///Media Queries
+
+  @mixin mq($break) {
+    @if $break == "medium" {
+      @media (min-width: $brk-med) {
+        @content;
+      }
+    }
+    @else if $break == "large" {
+      @media (min-width: $brk-lg) {
+        @content;
+      }
+    }
+     @else {
+     	@error "NO value '#{$break}'.";
+    }
+  }

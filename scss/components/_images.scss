@@ -1,12 +1,15 @@
 .img{
     &--frame {
-      @include width;
+    
+      padding: 10px;
       border: solid 1px grey;
+      display: block;
       @include img;
   }
     &--avatar {
-      display:block;
       margin:20px;
+
+      display: block;
        @include img;
     // padding-left: 30px;
   }

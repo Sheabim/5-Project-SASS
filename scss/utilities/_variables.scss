@@ -12,24 +12,24 @@ $font-color              :#7F7E7E;
 
 // Descriptive color variables
 
-$green-highlight : #28DCB8;
-$blue-highlight  : #51DDFC;
+$green-highlight    :#28DCB8;
+$blue-highlight     :#51DDFC;
 
 // Button
 ///variabaless butoon
 
 
-$green  :#63CC82;
-$red    :#E4757A;
-$orange :#FD7856;
-$purple :#927BC1;
+$green      :#63CC82;
+$red        :#E4757A;
+$orange     :#FD7856;
+$purple     :#927BC1;
 
 $buttons: (
-    default: $blue-highlight,
-    success: $green,
-    error  : $red,
-    warning: $orange,
-    info   : $purple,
+    default   : $blue-highlight,
+    success   : $green,
+    error     : $red,
+    warning   : $orange,
+    info      : $purple,
 );
 
 //Grid
@@ -54,9 +54,9 @@ $grids: (
     );
 
 //Media query
-$brkpoint-lg: 1024px;
-$brkpoint-sm: 440px;
-$brkpoint-sm: 768px;
+$brk-lg    : 1024px;
+$brk-sm    : 440px;
+$brk-med   : 768px;
 
 
 
@@ -65,125 +65,85 @@ $brkpoint-sm: 768px;
 
 
 
-
-
-@mixin flexy($disp:flex,
-     $dir:null,
-     $just:null,
-     $align:null){
- display: $disp ;
- flex-direction:$dir ;
- justify-content: $just;
- align-items:  $align ;
-
-}
-
-
-
-//mixn imag
-@mixin img {
-  margin-left: auto;
-  margin-right: auto;
-
-}
-
-//mixin padding width
-@mixin width {
-  padding: 10px;
-  width: 100%;
-
-}
 
 
 
 
 // buton--------------------------------------
 
-
-
-//mixing grid
-@mixin color-grd ($grids) {
-@each $grid, $color in $grids {
-    .grid__col--#{$grid}.theme__colors {
-      background-color:$color;
-    }
-  }
-};
-/// mixinh button
-
-//mxin flex
-@mixin flexy($disp:flex,
-     $dir:null,
-     $just:null,
-     $align:null){
- display: $disp ;
- flex-direction:$dir ;
- justify-content: $just;
- align-items:  $align   ;
-
-}
-
-//grid mixing
-@each $grid, $color in $grids {
-  .grid__col--#{$grid}.theme__colors {
-    background-color:$color;
-  }
-}
-
-/////////////////////
-
-@media (min-width:$brkpoint-lg) {
-
-  .nav__item a{
-    padding: 10px 5px;
-    margin: 20px;
-  }
-
-   .grid__row,
-   .nav,
-   .grid__col--12,
-   {
-     display:flex;
-     flex-direction: row;
-     text-align: center;
-}
- .grid__col--12{
-      justify-content: space-around;
-      width: 100%;
- }
-.grid__row{
-      justify-content: space-around;
-}
- .grid__col--8 {
-     flex: 1 80%;
- }
-  .grid__col--4 {
-    padding-left: 40px;
-  }
-}
-
-
 //
-// @mixin mq($break) {
-//   @mixin mq($break) {
-//     @if $break == "small" {
-//       @media (min-width: $brkpoint-sm) and (max-width: $brkpoint-md) {
-//         @content;
+// /* Mixing Flexbox ---------------------*/
+// @mixin flexy($disp:flex,
+//      $dir:null,
+//      $just:null,
+//      $align:null){
+//  display: $disp ;
+//  flex-direction:$dir ;
+//  justify-content: $just;
+//  align-items:  $align ;
+//
+// }
+
+
+// @media (min-width:$brk-med) {
+//
+//   .img{
+//         &--frame {
+//     text-align: center;
+//     padding-: 50px;
+//
 //       }
-//     }
-//     @else if $break == "medium" {
-//       @media (min-width: $brkpoint-md + 1) {
-//         @content;
-//       }
-//     }
-//     @else if $break == "large" {
-//       @media (min-width: $brkpoint-lg) {
-//         @content;
-//       }
-//     }
-//      @else {
-//      	@error "NO value '#{$break}'.";
-//     }
+//         &--avatar {
+//           display:block;
+//
+//
 //   }
 //
 // }
+// }
+// @media (min-width:$brk-lg) {
+
+  // .nav__item a{
+  //   padding: 10px 5px;
+  //   margin: 20px;
+  // }
+
+   // .grid__row,
+   // .nav,
+//    .grid__col--12,{
+// @include flexy($dir: row);
+//      text-align: center;
+// }
+ // .grid__col--12{
+ // @include flexy($just:  space-around);
+ //      width: 100%;
+ // }
+// .grid__row{
+//   @include flexy($just:  space-around);
+// }
+ // .grid__col--8 {
+ //     flex: 1 80%;
+ // }
+//   .grid__col--4 {
+//     padding-left: 40px;
+//   }
+// }
+
+
+///Media Queries
+
+  @mixin mq($break) {
+    @if $break == "medium" {
+      @media (min-width: $brk-med) {
+        @content;
+      }
+    }
+    @else if $break == "large" {
+      @media (min-width: $brk-lg) {
+        @content;
+      }
+    }
+     @else {
+     	@error "NO value '#{$break}'.";
+    }
+  }
