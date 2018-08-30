@@ -7,7 +7,7 @@
 // Font S
 $font-google             :'https://fonts.googleapis.com/css?family=Quicksand:300,400';
 $font-family             :'Quicksand', sans-serif;
-$font-size               :20px;
+$font-size               :17px;
 $font-color              :#7F7E7E;
 
 // Descriptive color variables
@@ -57,93 +57,3 @@ $grids: (
 $brk-lg    : 1024px;
 $brk-sm    : 440px;
 $brk-med   : 768px;
-
-
-
-
-
-
-
-
-
-
-
-
-// buton--------------------------------------
-
-//
-// /* Mixing Flexbox ---------------------*/
-// @mixin flexy($disp:flex,
-//      $dir:null,
-//      $just:null,
-//      $align:null){
-//  display: $disp ;
-//  flex-direction:$dir ;
-//  justify-content: $just;
-//  align-items:  $align ;
-//
-// }
-
-
-// @media (min-width:$brk-med) {
-//
-//   .img{
-//         &--frame {
-//     text-align: center;
-//     padding-: 50px;
-//
-//       }
-//         &--avatar {
-//           display:block;
-//
-//
-//   }
-//
-// }
-// }
-// @media (min-width:$brk-lg) {
-
-  // .nav__item a{
-  //   padding: 10px 5px;
-  //   margin: 20px;
-  // }
-
-   // .grid__row,
-   // .nav,
-//    .grid__col--12,{
-// @include flexy($dir: row);
-//      text-align: center;
-// }
- // .grid__col--12{
- // @include flexy($just:  space-around);
- //      width: 100%;
- // }
-// .grid__row{
-//   @include flexy($just:  space-around);
-// }
- // .grid__col--8 {
- //     flex: 1 80%;
- // }
-//   .grid__col--4 {
-//     padding-left: 40px;
-//   }
-// }
-
-
-///Media Queries
-
-  @mixin mq($break) {
-    @if $break == "medium" {
-      @media (min-width: $brk-med) {
-        @content;
-      }
-    }
-    @else if $break == "large" {
-      @media (min-width: $brk-lg) {
-        @content;
-      }
-    }
-     @else {
-     	@error "NO value '#{$break}'.";
-    }
-  }

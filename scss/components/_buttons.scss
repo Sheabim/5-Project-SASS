@@ -1,16 +1,18 @@
 
 .btn {
+
 @each $button, $color in $buttons {
    &--#{$button} {
         background-color:$color;
          @extend %btn-style;
    }
+
  }
 }
 
 .theme {
   &__colors {
-      @include width;
+
       margin:5px;
       border-radius: 5px;
       margin-top: 15px;

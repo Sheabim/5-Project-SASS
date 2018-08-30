@@ -18,9 +18,10 @@
 
 
 .container{
-   width: 85%;
-   margin: 0 auto;
-}
+     width: 85%;
+     margin: 0 auto;
+    font-size: $font-size;
+  }
 
 .link{
     text-decoration: none;
@@ -29,10 +30,10 @@
 }
 
 .blockquote {
-  font-style: italic;
-  font-size:20px;
-  border-left: solid 10px $green-highlight;
-  border-radius: 5px;
-  padding-left: 25px;
-  margin-bottom: 50px;
+    font-style: italic;
+    font-size:20px;
+    border-left: solid 10px $green-highlight;
+    border-radius: 5px;
+    padding-left: 25px;
+    margin-bottom: 50px;
 }

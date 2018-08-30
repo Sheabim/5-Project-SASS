@@ -2,30 +2,53 @@
  .grid__row {
        padding-top: 30px;
        color:$font-color;
-       @include mq(large){
-       // @media (min-width:$brk-lg) {
-       @include flexy($dir: row, $just:  space-around);
-            text-align: center;
-       }
+         @include mq(large){
+         // @media (min-width:$brk-lg) {
+         @include flexy($dir: row, $just:  space-around);
+              text-align: center;
+    }
   }
 
 .grid__col--12 {
-      width: 100%;
-      @include mq(large){
-      @include flexy($dir: row,$just: space-around);
-      text-align: center;
-      }
+        @include width;
+        @include mq(large){
+        @include flexy($dir: row,$just: space-around);
+        text-align: center;
+   }
  }
 
-
  .grid__col--8 {
-     @include mq(large){
-     flex: 1 80%;
+      @include width;
+      @include mq(large){
+      flex: 1 100%;
  }
 }
 
 .grid__col--4 {
-     @include mq(large){
-  padding-left: 40px;
+      @include width;
+      @include mq(large){
+      padding-left: 40px;
+ }
 }
+
+.grid__col--6,
+.grid__col--3,{
+     @include width
+}
+
+
+.grid__col--5{
+     @include width;
+     @include mq(large){
+     width: 40%;
+     padding: 10px;
+  }
+}
+.grid__col--7{
+      @include width;
+      @include mq(large){
+      width: 60%;
+      padding: 10px;
+      margin-bottom: 5px;
+ }
 }

@@ -3,7 +3,7 @@
 
 /* Mixing PADDING IMAGE ---------------------*/
 @mixin width {
-  padding: 10px;
+  padding: 8px;
   width: 100%;
 }
 /* Mixing imagin position ---------------------*/
@@ -18,16 +18,12 @@
   margin-right: auto;
 }
 
-/// mixinh button
-
 //grid mixing
 @each $grid, $color in $grids {
   .grid__col--#{$grid}.theme__colors {
     background-color:$color;
   }
 }
-
-
 //mixing grid
 @mixin color-grd ($grids) {
 @each $grid, $color in $grids {
@@ -37,21 +33,20 @@
   }
 };
 
-
 /* Mixing Flexbox ---------------------*/
 @mixin flexy($disp:flex,
      $dir:null,
      $just:null,
      $align:null){
- display: $disp ;
- flex-direction:$dir ;
- justify-content: $just;
- align-items:  $align ;
+   display: $disp ;
+   flex-direction:$dir ;
+   justify-content: $just;
+   align-items:  $align ;
 
 }
 
 
-///Media Queries
+//Media Queries
 
   @mixin mq($break) {
     @if $break == "medium" {

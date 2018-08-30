@@ -1,1 +1,4 @@
 /* Function ---------------------*/
+@function px($target, $context: $font-size) {
+	@return ($target / $context) * 10px;
+}
