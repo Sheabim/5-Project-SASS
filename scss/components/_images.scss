@@ -4,6 +4,7 @@
       border: solid 1px grey;
       display: block;
       @include img;
+      max-width: 100%;
   }
     &--avatar {
       margin:20px;

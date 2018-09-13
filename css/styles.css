@@ -345,7 +345,8 @@ p {
   display: block; }
 
 ul {
-  list-style-type: none; }
+  list-style-type: none;
+  padding: 0; }
 
 .grid__row {
   padding-top: 30px;
@@ -408,7 +409,8 @@ ul {
   border: solid 1px grey;
   display: block;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  max-width: 100%; }
 .img--avatar {
   margin: 20px;
   display: block;
